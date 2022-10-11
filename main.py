@@ -24,6 +24,7 @@ urllib.request.urlretrieve(url, filename)
 with open(filename, 'r', encoding='UTF-8') as file:
     data = json.load(file)
 
+
 """
 ШАГ 2. Преобразуем слова в числа, набор фраз в вектор.
 
