@@ -67,8 +67,8 @@ model.score(X_vec, y)  # Качество на тренировочной выб
 """
 
 
-def get_intent(text):
-    text_vec = local_vectorize.transform([text])
+def get_intent(element):
+    text_vec = local_vectorize.transform([element])
     intent = model.predict(text_vec)[0]
     return intent
 
@@ -77,8 +77,8 @@ def get_response(intent):
     return random.choice(data[intent]['responses'])
 
 
-def bot(phrase):
-    intent = get_intent(phrase)
+def bot(phrase_from):
+    intent = get_intent(phrase_from)
     answer = get_response(intent)
     return answer
 
